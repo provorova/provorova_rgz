@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block main %}
+<h1 style="color: MidnightBlue;">Профили
+    
+    <ul>
+    {% if result %}
+        {% for result in result %}
+            <li>{{ result.username }}  {{ result.userage }} {{ result.info }}</li>
+        {% endfor %}    
+    </ul>   
+    {% else %}
+        <h2>Опубликованных профилей нет</h2>
+    {% endif %}
+{% endblock %}

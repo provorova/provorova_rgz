@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block main %}
+<h1 style="text-align:center;color: MidnightBlue;">Мой профиль</h1>
+<div id="info_user">
+    <div>
+        Имя: {{ user.username }}
+    </div>
+    <div>
+        Возраст: {{ user.userage }}
+    </div>
+    <div>
+        Пол: {{ user.gender }}
+    </div>
+    <div>
+        Пол, который я ищу: {{ user.gender_poisk }}
+    </div>
+    {% if user.info %}
+        <div>
+            Информация обо мне: {{ user.info }}
+        </div>
+    {% endif %}
+</div>
+<form id="edit_form" styly="display:none" action="/profile_edit"> 
+
+</form>
+<form action="/publish" method="post">
+    <input class="f" type="submit" value="{% if user.is_public %}Скрыть от пользователей{% else %}Показать пользователям{% endif %}">
+</form>
+<form action="/delete" method="post">
+    <input class="f" type="submit" value="Удалить профиль">
+</form>
+{% endblock %}

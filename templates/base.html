@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проворова Елена. {% block lab %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    {% block script %}{% endblock %}
+</head>
+{% block style %}{% endblock %}
+<body>
+    <header>
+        WEB-програмирование, рассчетно-графическое задание. Сайт знакомств
+        <div>
+            <a style="display: inline-block;" href="/profiles">
+                Просмотр анкет
+            </a>
+            <a style="display: inline-block;" href="/profile">
+                Мой профиль
+            </a>
+            <a style="display: inline-block;" href="/login">
+                Авторизоваться
+            </a>
+            <a style="display: inline-block;" href="/register">
+                Зарегистрироваться
+            </a>
+            <div style="display: inline-block;">{{ visibleUser }}</div>
+        </div>
+    </header>
+
+    <main>
+        {% block main %}{% endblock %}
+    </main>
+
+    <footer>
+        &copy;Проворова Елена, ФБИ-11, 3 курс, 2023
+    </footer>
+</body>
+</html>

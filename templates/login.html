@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block script %}
+<script src="{{ url_for('static', filename='main.js') }}"></script>
+{% endblock %}
+
+{% block main %}
+<form method="POST">
+    <h1 style="text-align:center;color: MidnightBlue;">Страница авторизации</h1>
+    <div id="message"></div>
+    <div class="error">{{ errors }}</div>
+    <div>
+        <label for="loginuser">Логин</label>
+        <input type="text" name="loginuser" placeholder="loginuser">
+    </div>
+
+    <div>
+        <label for="password">Пароль</label>
+        <input type="text" name="password" placeholder="password">
+    </div>
+
+    <button class="" type="submit">Войти</button>
+</form>
+{% endblock %}
